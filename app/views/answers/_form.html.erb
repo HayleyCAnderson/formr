@@ -1,0 +1,12 @@
+<%= form_for [answer] do |form| %>
+
+  <div class="answer">
+    <%= form.label :choice %>
+    <%= form.text_field :choice, placeholder: answer.choice %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
