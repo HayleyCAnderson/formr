@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     root "sessions#new"
   end
 
-  resources :surveys, only:[:index ,:new]
+  resources :surveys, only:[:index ,:new, :show]
 end
