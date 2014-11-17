@@ -1,5 +1,5 @@
 class Survey < ActiveRecord::Base
-  belongs_to :user, validates: true
+  belongs_to :user
 
   validates :name, presence: true
 end
