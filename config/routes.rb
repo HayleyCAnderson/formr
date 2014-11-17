@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   constraints Monban::Constraints::SignedIn.new do
-    root "forms#index"
+    root "survey#index", as: :survey
   end
 
   constraints Monban::Constraints::SignedOut.new do
