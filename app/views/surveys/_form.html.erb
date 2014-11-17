@@ -1,0 +1,12 @@
+<%= form_for [survey] do |form| %>
+
+  <div class="name-input">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
