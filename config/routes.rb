@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   constraints Monban::Constraints::SignedIn.new do
-    root "surveys#index", as: :surveys
+    root "surveys#index", as: :dashboard
   end
 
   constraints Monban::Constraints::SignedOut.new do
     root "sessions#new"
   end
 
-  resources :surveys, only:[:index, :new, :show]
+  resources :surveys, only: [:index, :new, :create, :show]
 end

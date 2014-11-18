@@ -17,19 +17,22 @@ ActiveRecord::Schema.define(version: 20141117191215) do
   enable_extension "plpgsql"
 
   create_table "questions", force: true do |t|
-    t.string   "content",    null: false
+    t.string   "content"
+    t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
   create_table "surveys", force: true do |t|
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "surveys", ["user_id_id"], name: "index_surveys_on_user_id_id", using: :btree
+  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
