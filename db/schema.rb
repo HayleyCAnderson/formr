@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141117210117) do
     t.datetime "updated_at"
   end
 
-  add_index "answers", ["question_id_id"], name: "index_answers_on_question_id_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "content"
