@@ -5,8 +5,7 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    @questions = []
-    5.times { @questions << @survey.questions.new }
+    @questions = Array.new(5) { @survey.questions.new }
   end
 
   def create
