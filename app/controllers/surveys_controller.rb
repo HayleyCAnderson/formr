@@ -6,6 +6,9 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @questions = Array.new(5) { @survey.questions.new }
+    @questions.each do |question|
+      question.answers = Array.new(4) { @survey.answers.new }
+    end
   end
 
   def create
@@ -22,6 +25,6 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:name, questions_attributes: [:content])
+    params.require(:survey).permit(:name, questions_attributes: [:content, answers_attributes: [:choice]])
   end
 end
