@@ -1,0 +1,7 @@
+<h2><%= survey.name %></h2>
+
+<h3>Share Survey: <%= link_to survey_url(survey), survey_url(survey) %></h3>
+
+<%= button_to "Edit Survey", edit_survey_path(survey), method: :get %>
+
+<%= button_to "Delete Survey", survey_path(survey), method: :delete %>

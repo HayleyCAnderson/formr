@@ -2,6 +2,7 @@ class SurveysController < ApplicationController
   before_action :require_login, except: [:show]
 
   def index
+    @surveys = current_user.surveys
   end
 
   def new
