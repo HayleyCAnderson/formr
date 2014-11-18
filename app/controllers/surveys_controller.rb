@@ -2,7 +2,6 @@ class SurveysController < ApplicationController
   before_action :require_login, except: [:show]
 
   def index
-    @surveys = current_user.surveys
   end
 
   def new
@@ -32,7 +31,7 @@ class SurveysController < ApplicationController
   end
 
   def destroy
-    survey.delete
+    survey.destroy
 
     redirect_to surveys_path
   end
