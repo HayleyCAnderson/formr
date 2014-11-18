@@ -5,13 +5,15 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    @questions = []
+    5.times { @questions << @survey.questions.new }
   end
 
   def create
     @survey = current_user.surveys.new(survey_params)
     @survey.save
 
-    redirect_to survey_path(@survey)
+    redirect_to @survey
   end
 
   def show
@@ -21,6 +23,6 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:name)
+    params.require(:survey).permit(:name, questions_attributes: [:content])
   end
 end

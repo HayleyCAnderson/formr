@@ -1,9 +1,16 @@
-<%= form_for [survey] do |form| %>
+<%= form_for survey do |form| %>
 
   <div class="name-input">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+
+  <%= form.fields_for :questions do |form| %>
+    <div class="question-input">
+      <%= form.label "Question" %>
+      <%= form.text_field :content %>
+    </div>
+  <% end %>
 
   <div class="submit">
     <%= form.submit %>
