@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
   before_action :require_login, except: [:show]
+
   def index
   end
 
@@ -9,17 +10,37 @@ class SurveysController < ApplicationController
   end
 
   def create
-    @survey = current_user.surveys.new(survey_params)
-    @survey.save
+    survey = current_user.surveys.new(survey_params)
+    survey.save
 
-    redirect_to @survey
+    redirect_to survey
   end
 
   def show
-    @survey = Survey.find(params[:id])
+    survey
+  end
+
+  def edit
+    survey
+  end
+
+  def update
+    survey.update(survey_params)
+
+    redirect_to survey
+  end
+
+  def destroy
+    survey.destroy
+
+    redirect_to surveys_path
   end
 
   private
+
+  def survey
+    @survey ||= Survey.find(params[:id])
+  end
 
   def survey_params
     params.require(:survey).permit(:name, questions_attributes: [:content])
