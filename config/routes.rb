@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :surveys do
-    resources :confirmations, only: [:show]
+    resource :confirmations, only: [:show]
   end
 
 
