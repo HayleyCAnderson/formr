@@ -1,15 +1,145 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* ====== GENERAL ====== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: #2c3e50;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}    
+
+/* ====== SIGN-IN/UP ====== */
+
+.logo {
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  text-align: center;
+}
+
+.logo a:link,
+.logo a:visited,
+.logo a:hover,
+.logo a:active {
+    text-decoration: none;
+    color: #16A085;
+}
+
+.sign-in-form,
+.sign-up-form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.sign-in-button,
+.create-account-button,
+.create-survey-button,
+.submit-button {
+  border: 0;
+  border-radius: 2px;
+  background: #009688;
+  font-family: "Ubuntu";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: .9em;
+  letter-spacing: 1.1px;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  color: #FFFFFF;
+  padding: 13px 20px 13px 20px;
+}
+
+.sign-in-button:hover,
+.create-account-button:hover,
+.create-survey-button:hover,
+.submit-button:hover {
+    background: #128176;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+}
+
+h3 a:link,
+h3 a:visited {
+    text-decoration: none;
+    color: #009688;
+}
+
+h3 a:hover,
+h3 a:active {
+    text-decoration: none;
+    color: #128176;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* ====== FORMR HEADER ====== */
+
+.logo-small {
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  text-align: left;
+  padding: 1em;
+  float:left;
+}
+
+.logo-small a:link,
+.logo-small a:visited,
+.logo-small a:hover,
+.logo-small a:active {
+    text-decoration: none;
+    color: #16A085;
+}
+
+.right-controls {
+  float: right;
+  padding: 2em;
+}
+
+.right-controls a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.right-controls a:active {
+  color: #2ecc71;
+}
+
+.right-controls a:first-child {
+  padding-right: 2em;
+}
+
+/* ====== DASHBOARD-ZERO STATE ====== */
+
+.dashboard-content {
+  clear:both;
+  padding-left: 2em;
+}
+
+.dashboard-content p {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+/* ====== NEW SURVEY ====== */
+
+.survey-container {
+  clear:both;
+  padding-left: 2em;
+}
+
