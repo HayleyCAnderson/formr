@@ -10,6 +10,13 @@
       <%= form.label "Question" %>
       <%= form.text_field :content %>
     </div>
+
+    <%= form.fields_for :answers do |form| %>
+      <div class="answer-input">
+        <%= form.label "Answer" %>
+        <%= form.text_field :choice %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="submit">
