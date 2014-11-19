@@ -5,18 +5,15 @@
     <%= form.text_field :name %>
   </div>
 
-  <%= form.fields_for :questions do |form| %>
-    <div class="question-input">
-      <%= form.label "Question" %>
-      <%= form.text_field :content %>
-    </div>
+  <%= form.fields_for :questions do |question_form| %>
+    <%= render "questions/form", form: question_form %>
 
-    <%= form.fields_for :answers do |form| %>
-      <div class="answer-input">
-        <%= form.label "Answer" %>
-        <%= form.text_field :choice %>
-      </div>
-    <% end %>
+    Answers:
+    <ul>
+      <%= question_form.fields_for :answers do |answer_form| %>
+        <%= render "answers/form", form: answer_form %>
+      <% end %>
+    </ul>
   <% end %>
 
   <div class="submit">

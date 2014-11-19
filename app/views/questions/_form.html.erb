@@ -1,0 +1,8 @@
+<div class="question-input">
+  <%= form.label "Question" %>
+  <%= form.text_field :content %>
+  <% unless request.path == new_survey_path %>
+    <%= form.label "Delete" %>
+    <%= form.check_box :_destroy %>
+  <% end %>
+</div>
