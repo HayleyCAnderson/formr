@@ -1,5 +1,5 @@
+<h1>Dashboard</h1>
+
+<%= render current_user.surveys || "You have no surveys yet." %>
+
 <%= link_to "New Survey", new_survey_path %>
-
-<h1>Your Surveys</h1>
-
-<%= render current_user.surveys %>

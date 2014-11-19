@@ -1,23 +1,23 @@
-<%= form_for survey do |form| %>
+<div class="survey-container">
+  <%= form_for survey do |form| %>
 
-  <div class="name-input">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="name-input">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <%= form.fields_for :questions do |question_form| %>
-    <%= render "questions/form", form: question_form %>
+    <%= form.fields_for :questions do |question_form| %>
+      <%= render "questions/form", form: question_form %>
 
-    Answers:
-    <ul>
-      <%= question_form.fields_for :answers do |answer_form| %>
-        <%= render "answers/form", form: answer_form %>
-      <% end %>
-    </ul>
+      Answers:
+      <ul>
+        <%= question_form.fields_for :answers do |answer_form| %>
+          <%= render "answers/form", form: answer_form %>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= form.submit "Save and publish", :class => "create-survey-button" %>
+
   <% end %>
-
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-
-<% end %>
+</div>
