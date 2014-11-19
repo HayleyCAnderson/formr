@@ -3,9 +3,13 @@ class Survey < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_many :answers, through: :questions
 
-  accepts_nested_attributes_for :questions
-  accepts_nested_attributes_for :answers
+  accepts_nested_attributes_for :questions,
+    allow_destroy: true,
+    reject_if: lambda { |attributes| attributes["content"].blank? }
+  accepts_nested_attributes_for :answers,
+    allow_destroy: true,
+    reject_if: :all_blank
 end
