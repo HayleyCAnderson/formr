@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>Formr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', 'normalize', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= link_to "Formr", root_path %>
-
+  <div class="logo-small">
+    <%= link_to "Formr", root_path %>
+  </div>
   <% if signed_in? %>
     <%= link_to "Sign out", session_path, method: :delete %>
   <% else %>
