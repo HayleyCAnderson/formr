@@ -16,7 +16,7 @@ class SurveysController < ApplicationController
     survey = current_user.surveys.new(survey_params)
     survey.save
 
-    redirect_to survey_confirmation_path(survey.id,survey.id)
+    redirect_to survey_confirmation_path(survey.id, survey.id)
   end
 
   def show
