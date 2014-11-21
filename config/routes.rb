@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :surveys do
     resource :confirmations, only: [:show]
+    resource :results, only: [:show]
   end
 
 

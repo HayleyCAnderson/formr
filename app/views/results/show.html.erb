@@ -1,0 +1,16 @@
+<div class="survey-container">
+  <h1><%= @survey.name %> Results</h1>
+
+  <% @survey.questions.each do |question| %>
+    <p><%= question.content %><p>
+    <ul>
+      <% question.answers.each do |answer| %>
+        <li>
+          <%= answer.choice %>: <%= answer.results_count %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <h3><%= link_to "Return to Dashboard", dashboard_path %></h3>
+</div>
