@@ -12,7 +12,7 @@ body {
 button, input, select, textarea {
   font-family: inherit;
   font-size: 100%;
-}    
+}
 
 /* ====== SIGN-IN/UP ====== */
 
@@ -41,6 +41,8 @@ button, input, select, textarea {
 .sign-in-button,
 .create-account-button,
 .create-survey-button,
+.edit-survey-button,
+.delete-survey-button,
 .submit-button {
   border: 0;
   border-radius: 2px;
@@ -50,15 +52,31 @@ button, input, select, textarea {
   text-transform: uppercase;
   font-size: .9em;
   letter-spacing: 1.1px;
-  margin-top: 4em;
   margin-bottom: 1em;
   color: #FFFFFF;
   padding: 13px 20px 13px 20px;
 }
 
+.sign-in-button,
+.create-account-button,
+.create-survey-button,
+.submit-button {
+  margin-top: 4em;
+}
+
+.edit-survey-button,
+.delete-survey-button {
+  display: inline-block;
+  float: right;
+  margin-right: 1em;
+  margin-top: -3.8em;
+}
+
 .sign-in-button:hover,
 .create-account-button:hover,
 .create-survey-button:hover,
+.edit-survey-button:hover,
+.delete-survey-button:hover,
 .submit-button:hover {
     background: #128176;
 }
@@ -71,20 +89,20 @@ input[type="text"]{
     margin: 5px;
 }
 
+h2 a:link,
+h2 a:visited,
 h3 a:link,
 h3 a:visited {
     text-decoration: none;
     color: #009688;
 }
 
+h2 a:hover,
+h2 a:active,
 h3 a:hover,
 h3 a:active {
     text-decoration: none;
     color: #128176;
-}
-
-h3 {
-  text-align: center;
 }
 
 /* ====== FORMR HEADER ====== */
@@ -108,7 +126,7 @@ h3 {
 
 .right-controls {
   float: right;
-  padding: 2em;
+  padding: 1em;
 }
 
 .right-controls a {
@@ -121,7 +139,7 @@ h3 {
 }
 
 .right-controls a:first-child {
-  padding-right: 2em;
+  padding-right: 1em;
 }
 
 /* ====== DASHBOARD-ZERO STATE ====== */
@@ -131,9 +149,9 @@ h3 {
   padding-left: 2em;
 }
 
-.dashboard-content p {
-  font-size: 2em;
-  margin-bottom: 0;
+.each-survey {
+  clear: both;
+  margin-bottom: 2em;
 }
 
 /* ====== NEW SURVEY ====== */

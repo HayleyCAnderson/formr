@@ -1,5 +1,7 @@
-<h1>Dashboard</h1>
+<div class="dashboard-content">
+  <h1>Dashboard</h1>
 
-<%= render(current_user.surveys) || "You have no surveys yet." %>
+  <h2><%= link_to "New Survey", new_survey_path %></h2>
 
-<%= link_to "New Survey", new_survey_path %>
+  <%= render(current_user.surveys) || "You have no surveys yet." %>
+</div>
