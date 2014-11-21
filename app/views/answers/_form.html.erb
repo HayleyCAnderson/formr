@@ -1,6 +1,6 @@
 <li>
   <%= form.text_field :choice %>
-  <% unless request.path == new_survey_path %>
+  <% if form.object.persisted? %>
     <%= form.label "Delete" %>
     <%= form.check_box :_destroy %>
   <% end %>
