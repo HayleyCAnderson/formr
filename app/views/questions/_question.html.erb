@@ -2,4 +2,4 @@
   <%= question.content %>
 </div>
 
-<%= render question.answers %>
+<%= collection_radio_buttons "survey[#{question.id}]", :answer_id, question.answers, :id, :choice %>
