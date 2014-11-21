@@ -1,6 +1,8 @@
-<h1> Success! </h1>
+<div class="dashboard-content">
+  <h1>Success!</h1>
 
-<h2> <%= @survey.name %> is available at </h2>
-<h3> <%= survey_url(@survey) %>  </h3>
+  <h2><%= @survey.name %> is available at:</h2>
+  <h3><%= link_to survey_url(@survey), survey_url(@survey) %></h3>
 
-<%= link_to "Back to Dashboard", dashboard_path %>
+  <h3><%= link_to "Back to Dashboard", dashboard_path %></h3>
+</div>

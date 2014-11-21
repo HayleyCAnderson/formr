@@ -1,12 +1,11 @@
-<h1><%= @survey.name %></h1>
+<div class="survey-container">
+  <h1><%= @survey.name %></h1>
 
-<div class="take-survey-container" >
-  <%= form_for :your_answers, url: user_surveys_path do |form| %>
+  <div class="take-survey-container" >
+    <%= form_for :your_answers, url: user_surveys_path do |form| %>
 
-    <%= render @survey.questions %>
-    <div>
+      <%= render @survey.questions %>
       <%= form.submit class: "submit-button" %>
-    </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
