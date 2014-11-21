@@ -1,5 +1,6 @@
 <li>
   <%= form.text_field :choice %>
+
   <% if form.object.persisted? %>
     <%= form.label "Delete" %>
     <%= form.check_box :_destroy %>
