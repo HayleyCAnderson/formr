@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :user_surveys, only: [:create]
 
+  resource :thanks, only: [:show]
+
   resources :surveys do
     resource :confirmations, only: [:show]
     resource :results, only: [:show]

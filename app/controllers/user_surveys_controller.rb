@@ -3,6 +3,6 @@ class UserSurveysController < ApplicationController
     complete_survey = Results.new(params)
     complete_survey.update_results!
 
-    redirect_to root_path
+    redirect_to thanks_path
   end
 end
