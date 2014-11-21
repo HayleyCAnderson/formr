@@ -89,6 +89,10 @@ input[type="text"]{
     margin: 5px;
 }
 
+input[type="radio"]{
+  margin-right: .25em;
+}
+
 h2 a:link,
 h2 a:visited,
 h3 a:link,
@@ -159,5 +163,18 @@ h3 a:active {
 .survey-container {
   clear:both;
   padding-left: 2em;
+}
+
+.question,
+.answers {
+  margin-bottom: 1em;
+}
+
+.answers:last-of-type {
+  margin-bottom: 0;
+}
+
+.answers label {
+  margin-right: 1em;
 }
 
