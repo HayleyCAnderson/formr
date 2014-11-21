@@ -1,6 +1,6 @@
 == README
 
-Please view this project here: [chj-formr.herokuapp.com](http://chj-formr.herokuapp.com)
+Please view this project here: http://chj-formr.herokuapp.com
 
 This is Formr, our SurveyMonkey clone. It is being created as our second group project, in week nine of Metis.
 
