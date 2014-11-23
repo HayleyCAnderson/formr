@@ -1,7 +1,11 @@
 <div class="dashboard-content">
   <h1>Your results have been submitted!</h1>
 
-  <h2>Thank you for taking this survey.</h2>
+  <h2>Thank you for taking <%= @survey.name %>.</h2>
+
+  <h3>Here are the results so far:</h3>
+
+  <%= render "results/results", survey: @survey %>
 
   <% if signed_in? %>
     <h3>You can make a new survey <%= link_to "here", new_survey_path %>!</h3>

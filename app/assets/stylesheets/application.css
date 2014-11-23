@@ -180,3 +180,17 @@ h3 a:active {
   margin-right: 1em;
 }
 
+/* ====== RESULTS ====== */
+
+.bar {
+  background: #16A085;
+  border: 1px solid #16A085;
+  height: 1em;
+  float: left;
+  margin-right: .5em;
+}
+
+ul li {
+  list-style-type: none;
+  margin: .5em 0;
+}
