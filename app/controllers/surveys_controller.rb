@@ -28,9 +28,11 @@ class SurveysController < ApplicationController
   end
 
   def update
-    survey.update(survey_params)
-
-    redirect_to survey
+    if survey.update(survey_params)
+      redirect_to survey_confirmations_path(survey)
+    else
+      render :edit
+    end
   end
 
   def destroy
