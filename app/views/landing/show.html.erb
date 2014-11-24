@@ -1,0 +1,9 @@
+<div class="dashboard-content">
+  <h1>Welcome to Formr</h1>
+
+  <h2>Take our recommended surveys below, and <%= link_to "sign up", new_user_path %> or <%= link_to "sign in", new_session_path %> to make your own.</h2>
+
+  <% @surveys.each do |survey| %>
+    <h3><%= link_to survey.name, survey_path(survey) %> by <%= survey.user.username %></h3>
+  <% end %>
+</div>
