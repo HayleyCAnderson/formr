@@ -3,12 +3,7 @@
   <%= form_for @user do |form| %>
 
     <% if @user.errors.any? %>
-      <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
-      <ul>
-        <% @user.errors.full_messages.each do |error_message| %>
-          <li><%= error_message %></li>
-        <% end %>
-      </ul>
+      <%= render "errors/errors", errors: @user.errors %>
     <% end %>
 
     <div>

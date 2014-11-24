@@ -5,18 +5,18 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @survey = Survey.new
-    @questions = Array.new(5) { @survey.questions.new }
-    @questions.each do |question|
-      question.answers = Array.new(4) { @survey.answers.new }
-    end
+    survey_build
   end
 
   def create
     survey = current_user.surveys.new(survey_params)
-    survey.save
 
-    redirect_to survey_confirmations_path(survey)
+    if survey.save
+      redirect_to survey_confirmations_path(survey)
+    else
+      survey_build
+      render :new
+    end
   end
 
   def show
@@ -43,6 +43,14 @@ class SurveysController < ApplicationController
 
   def survey
     @survey ||= Survey.find(params[:id])
+  end
+
+  def survey_build
+    @survey = Survey.new
+    @questions = Array.new(5) { @survey.questions.new }
+    @questions.each do |question|
+      question.answers = Array.new(4) { @survey.answers.new }
+    end
   end
 
   def survey_params
