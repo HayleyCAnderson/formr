@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :survey
+  default_scope { order(:id) }
 
   has_many :answers, dependent: :destroy
 

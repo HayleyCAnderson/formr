@@ -1,10 +1,8 @@
 class ThanksController < ApplicationController
   def show
-    begin
-      @survey = Survey.find(survey_id)
+    @survey = Survey.find(survey_id)
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path
-    end
   end
 
   private
