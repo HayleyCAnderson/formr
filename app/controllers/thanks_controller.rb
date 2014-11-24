@@ -1,6 +1,16 @@
 class ThanksController < ApplicationController
   def show
-    @referer_survey_id = request.referer.split("/").pop
-    @survey = Survey.find(@referer_survey_id)
+    begin
+      @survey = Survey.find(survey_id)
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def survey_id
+    survey_url = request.referer
+    survey_url.split("/").pop
   end
 end
