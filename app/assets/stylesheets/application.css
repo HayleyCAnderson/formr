@@ -4,9 +4,18 @@
 	box-sizing: border-box;
 }
 
+html,
 body {
   font-family: 'Ubuntu', sans-serif;
   color: #2c3e50;
+  height: 100%;
+}
+
+#container {
+  min-height: 100%;
+  position: relative;
+  overflow: auto;
+  padding-bottom: .75em;
 }
 
 button, input, select, textarea {
@@ -140,12 +149,33 @@ h3 a:active {
   color: #2c3e50;
 }
 
+.right-controls a:hover {
+  text-decoration: underline;
+}
+
 .right-controls a:active {
   color: #2ecc71;
 }
 
 .right-controls a:first-child {
   padding-right: 1em;
+}
+
+#footer {
+  position: relative;
+  clear: both;
+  bottom: 0;
+  right: 0;
+  margin-top: -2.5em;
+  height: .75em;
+}
+
+#footer .right-controls {
+  font-size: .75em;
+}
+
+#footer .right-controls a {
+  color: #16A085;
 }
 
 /* ====== DASHBOARD-ZERO STATE ====== */

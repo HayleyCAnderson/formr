@@ -10,20 +10,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="container">
+    <div class="right-controls">
+      <% if signed_in? %>
+        <%= link_to "Sign out", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_session_path %>
+        <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </div>
 
-  <div class="right-controls">
-    <% if signed_in? %>
-      <%= link_to "Sign out", session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_session_path %>
-      <%= link_to "Sign up", new_user_path %>
-    <% end %>
+    <div class=<%= logo_type %> >
+      <%= link_to "Formr", root_path %>
+    </div>
+
+    <%= yield %>
   </div>
 
-  <div class=<%= logo_type %> >
-    <%= link_to "Formr", root_path %>
+  <div id="footer">
+    <div class="right-controls">
+      Check out the code on <%= link_to "GitHub", "https://github.com/HayleyCAnderson/formr", html_options = { target: "_blank"} %>
+    </div>
   </div>
-
-  <%= yield %>
 </body>
 </html>

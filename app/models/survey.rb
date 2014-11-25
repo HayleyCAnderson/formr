@@ -2,6 +2,7 @@ class Survey < ActiveRecord::Base
   validates :name, presence: true
 
   belongs_to :user
+  default_scope { order(id: :desc) }
 
   has_many :questions, dependent: :destroy
   has_many :answers, through: :questions

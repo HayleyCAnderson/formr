@@ -1,8 +1,5 @@
 == README
 
-Please view this project here: http://chj-formr.herokuapp.com
+This is Formr, a SurveyMonkey clone. You can view this project online here: http://formr-orlatter.herokuapp.com
 
-This is Formr, our SurveyMonkey clone. It is being created as our second group project, in week nine of Metis.
-
-Team: Chris, Hayley, and Maria (designer)
-(Previous Julia was supposed to be our designer, hence the CHJ name, but she was out sick this week.)
+This is my version forked off of the group project created during week nine of Metis. After the group project ended, I wanted to continue adding features. You can view the group version here: https://github.com/CHJ-Metis/formr
